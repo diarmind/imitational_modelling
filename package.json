@@ -1,0 +1,16 @@
+{
+  "name": "imitational_modeling",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node --experimental-modules index.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitry Poponkin",
+  "license": "ISC",
+  "dependencies": {
+    "seedrandom": "^3.0.1"
+  }
+}
