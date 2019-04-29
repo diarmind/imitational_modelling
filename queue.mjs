@@ -8,6 +8,9 @@ class ClientQueue {
         this.getCar = this.getCar.bind(this);
         this.checkCarAvailability = this.checkCarAvailability.bind(this);
         this.releaseCar = this.releaseCar.bind(this);
+
+        // parameters to print
+        this.maxQueue = 0;
     }
 
     async getCar() {
@@ -18,6 +21,11 @@ class ClientQueue {
                 return;
             }
             this.queue.push(resolve);
+
+            // parameters to print
+            if (this.queue.length > this.maxQueue) {
+                this.maxQueue = this.queue.length;
+            }
         });
         return this;
     };

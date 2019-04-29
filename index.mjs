@@ -33,9 +33,21 @@ const processNewOrder = async () => {
 const generateNewOrder = exponential('order', 2 * 60);
 
 time.addGenerator({gen: generateNewOrder, callback: processNewOrder});
+
+let integralQueueLength = 0;
+let previousTime = 0;
+let integralCars = 0;
+
 const timeoutIt = () => {
+    integralQueueLength += (time.time - previousTime) * clientQueue.queue.length;
+    integralCars += (time.time - previousTime) * clientQueue.carsInUse;
+    previousTime = time.time;
     if (!time.tick()) {
         setTimeout(timeoutIt, 30);
+    } else {
+        console.log('AVERAGE QUEUE: ', integralQueueLength / time.time);
+        console.log('MAX QUEUE: ', clientQueue.maxQueue);
+        console.log('AVERAGE CARS IN USE: ', integralCars / time.time);
     }
 };
 setTimeout(timeoutIt, 30);
