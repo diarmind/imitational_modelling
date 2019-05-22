@@ -1,5 +1,5 @@
-import {time} from "./time.mjs";
-import {uniform, exponentialMin} from "./generator.mjs";
+import {time} from "../common/time.mjs";
+import {uniform, exponentialMin} from "../common/generator.mjs";
 
 
 const takeLoadTimeGen = uniform('load', 8 * 60, 12 * 60);
