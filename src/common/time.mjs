@@ -2,7 +2,7 @@ class Time {
     constructor() {
         this.time = 0;
         this.subscribers = {};
-        this.maxSimulationTime = 60 * 24;
+        this.maxSimulationTime = 60 * 60 * 24;
 
         this.addGenerator = this.addGenerator.bind(this);
         this.subscribeOnDelta = this.subscribeOnDelta.bind(this);
