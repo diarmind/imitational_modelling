@@ -5,8 +5,8 @@ import {rails} from "./rails.mjs";
 
 
 export default function start() {
-    const trainsToAGen = uniform('k', 35, 55);
-    const trainsToBGen = uniform('j', 35, 55);
+    const trainsToAGen = uniform('qwe', 35, 55);
+    const trainsToBGen = uniform('jry', 35, 55);
 
     time.addGenerator({gen: trainsToAGen, callback: rails.fromAToB});
     time.addGenerator({gen: trainsToBGen, callback: rails.fromBToA});
